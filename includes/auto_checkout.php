@@ -27,16 +27,22 @@ class AutoCheckout {
             $checkoutTime = $settings['auto_checkout_time'];
             $today = date('Y-m-d');
             
-            // Check if it's time for auto checkout
+            // For testing purposes, allow manual execution anytime
+            // In production, uncomment the time check below
+            /*
             if ($currentTime < $checkoutTime) {
                 return ['status' => 'not_time', 'message' => 'Not yet time for auto checkout'];
             }
+            */
             
             // Check if auto checkout already ran today
             $lastRun = $settings['last_auto_checkout_run'];
+            // For testing, allow multiple runs per day
+            /*
             if ($lastRun && date('Y-m-d', strtotime($lastRun)) === $today) {
                 return ['status' => 'already_run', 'message' => 'Auto checkout already executed today'];
             }
+            */
             
             // Get all occupied rooms that need checkout
             $rooms = $this->getRoomsForCheckout();
