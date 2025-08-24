@@ -1,9 +1,9 @@
 <?php
 // Database configuration - Compatible with Hostinger and other hosting providers
 $host = $_ENV['DB_HOST'] ?? 'localhost';
-$dbname = $_ENV['DB_NAME'] ?? 'hotel_management';
-$username = $_ENV['DB_USERNAME'] ?? 'root';
-$password = $_ENV['DB_PASSWORD'] ?? '';
+$dbname = $_ENV['DB_NAME'] ?? 'u261459251_software';
+$username = $_ENV['DB_USERNAME'] ?? 'u261459251_hotel';
+$password = $_ENV['DB_PASSWORD'] ?? 'Vishraj@9884';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
